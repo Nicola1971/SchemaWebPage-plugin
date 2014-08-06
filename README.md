@@ -3,7 +3,9 @@ SchemaWebPage-plugin
 
 Add basic schema.org microdata for "WebPage" or "Blog" schemas in your MODX Evolution your template
 
-Supported Properties in Beta 1.0: 
+![SchemaWebPage](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/schemawebpage-plugin-conf.jpg)
+
+Supported Properties in RC 1.0: 
 * type 
 * headline
 * alternativeHeadline
