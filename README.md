@@ -17,6 +17,11 @@ Supported Properties in RC 1.0:
 
 * Install with Package Manager or Store module
 
+### or
+
+* create a new plugin named **SchemaWebPage**
+* copy and paste the plugin code from **schemaWebPage.tpl**
+
 * **System Events:** OnWebPagePrerender
 
 * **Plugin configuration:** 
