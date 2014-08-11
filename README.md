@@ -6,7 +6,7 @@ Add basic schema.org microdata for "WebPage" or "Blog" schemas in your MODX Evol
 ![SchemaWebPage](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/schemawebpage-plugin-conf-rc11.jpg)
 
 Supported Properties in RC 1.1:
-* type: Default (WebPage), Contactpage, SearchResultsPage
+* itemscope and itemtype: Default (WebPage), Contactpage, SearchResultsPage
 * mainContentOfPage
 * headline
 * alternativeHeadline
@@ -36,3 +36,11 @@ Supported Properties in RC 1.1:
 * keywords configuration: default class based on tagLinks snippet
 * rating configuration: default class based on anythingRating snippet
 * mainContentOfPage (wrap content system variable)
+
+# To Do
+* description
+* date 
+* associatedMedia
+* better image microdata integration
+* author
+* comment
