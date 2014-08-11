@@ -35,3 +35,4 @@ Supported Properties in RC 1.1:
 * ContactPage and SearchResultPage configuration
 * keywords configuration: default class based on tagLinks snippet
 * rating configuration: default class based on anythingRating snippet
+* mainContentOfPage (wrap content system variable)
