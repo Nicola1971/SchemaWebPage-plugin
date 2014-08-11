@@ -34,7 +34,7 @@ Supported Properties in RC 1.1:
 
 Instructions:
 
-- System Events: OnWebPagePrerender OnParseDocument OnWebPageInit
+- System Events: OnWebPagePrerender
 
 - Plugin configuration:
 
