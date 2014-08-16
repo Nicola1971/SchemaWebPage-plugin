@@ -70,7 +70,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 * create a new plugin named **SchemaWebPage**
 * copy and paste the plugin code from **schemaWebPage.tpl**
 
-* **System Events:** OnWebPagePrerender
+* **System Events:** OnWebPagePrerender OnParseDocument
 
 * **Plugin configuration:** 
  
