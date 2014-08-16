@@ -1,9 +1,13 @@
-SchemaWebPage-plugin
+SchemaWebPage plugin
 ====================
 
 Add basic schema.org microdata for "WebPage" or "Blog" schemas in your MODX Evolution your template
 
+**SchemaWebPage plugin**
+
 ![SchemaWebPage](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/schemawebpage-plugin-conf-rc12.jpg)
+
+**SchemaItemScope tv**
 
 ![Schema tv](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/itemscopetv.jpg)
 
