@@ -4,7 +4,7 @@ SchemaWebPage plugin
 Add basic schema.org microdata for "WebPage", "Article" or "Blog" schemas in your MODX Evolution your template
 
 Supported Properties in RC 1.2:
-* itemscope and itemtype: Default (WebPage), Contactpage, SearchResultsPage
+* itemscope and itemtype: Default (WebPage), Contactpage, SearchResultsPage or Tv value 
 * mainContentOfPage
 * headline
 * alternativeHeadline
