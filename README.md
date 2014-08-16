@@ -21,10 +21,8 @@ Supported Properties in RC 1.2:
 <div class="container">
 <h1>Title of this page</h1>
 <div class="tagLinks">Tags: <a href="..." rel="tag">tag1</a>,<a href="..." rel="tag">tag2</a></div>
-<div id="maincontent">
 <img src="assets/images/image.png" alt="image test"/>
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
-</div>
 <div class="anythingRating">
 <div id="score_idItem" class="score">
 <span class="outnbsClass">0/5 stars</span> <span class="votesClass">(0 votes)</span>
@@ -38,8 +36,8 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 <div class="container">
 <h1 itemprop="headline">Title of this page</h1>
 <div class="tagLinks" itemprop="keywords">Tags: <a href="..." rel="tag">tag1</a>,<a href="..." rel="tag">tag2</a></div>
-<div id="maincontent" itemprop="articleBody">
 <img itemprop="image" src="assets/images/image.png" alt="image test"/>
+<div id="maincontent" itemprop="articleBody">
 Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
 </div>
 <div class="anythingRating">
