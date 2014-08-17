@@ -6,24 +6,24 @@
  *
  * @author    Nicola Lambathakis
  * @category    plugin
- * @version    1.2 RC1
+ * @version    RC 1.3
  * @license	 http://www.gnu.org/copyleft/gpl.html GNU Public License (GPL)
- * @internal    @events OnWebPagePrerender,OnParseDocument
+ * @internal    @events OnWebPagePrerender,OnParseDocument,OnLoadWebDocument
  * @internal    @installset base
  * @internal    @modx_category Schema4Evo
- * @internal @properties  &CreativeWork= Default itemscope itemtype:;string;WebPage &ContactPageId= Contact page id:;text;6 &SearchResultsPageId= Search Results Page id:;text;8 &headlinetag= Headline Tag:;list;h1,h2,h3;h1 &altheadlinetag= Alternate Headline Tag:;list;h1,h2,h3;h3 &KeywordsContainerclass= Keywords container class:;string;taglinks &RatingContainerclass= Rating container class:;string;score &ratingValueclass= Rating value class:;string;outnbsClass &ratingVotesClass= Rating votes class:;string;votesClass &itempropImage= Enable itemprop image:;list;enable,disable;enable
+ * @internal @properties  &CreativeWork= Default itemscope itemtype:;string;WebPage &ContactPageId= Contact page id:;text;6 &SearchResultsPageId= Search Results Page id:;text;8 &itempropImage= Itemprop on all content images:;list;enable,disable;enable &itempropImagePhpThumb= Itemprop on phpthumb images:;list;enable,disable;enable &headlinetag= Headline Tag:;list;h1,h2,h3;h1 &altheadlinetag= Alternate Headline Tag:;list;h2,h3,h4,h5;h3 &KeywordsContainerclass= Keywords container class:;string;taglinks &RatingContainerclass= Rating container class:;string;score &ratingValueclass= Rating value class:;string;outnbsClass &ratingVotesClass= Rating votes class:;string;votesClass
  */
 
 /*
-###SchemaWebPage Plugin for MODX Evolution###
+### SchemaWebPage Plugin for MODX Evolution ###
 Written By Nicola Lambathakis http://www.tattoocms.it/
-Version RC1.2
-Events: OnWebPagePrerender
+Version RC 1.3
+Events: OnWebPagePrerender,OnParseDocument,OnLoadWebDocument
 
 Add basic schema.org microdata for "WebPage", "Article" or "Blog" schemas in your MODX Evolution template
 http://schema.org/WebPage
 
-Supported Properties in RC 1.2:
+Supported Properties in RC 1.3:
 - itemscope and itemtype: Default (WebPage), Contactpage, SearchResultsPage or Tv value
 - mainContentOfPage / articleBody
 - headline
@@ -34,14 +34,15 @@ Supported Properties in RC 1.2:
 
 Instructions:
 
-- System Events: OnWebPagePrerender OnParseDocument
+- System Events: OnWebPagePrerender,OnParseDocument,OnLoadWebDocument
 
 - Plugin configuration:
 
-&CreativeWork= Default itemscope itemtype:;string;WebPage &ContactPageId= Contact page id:;text;6 &SearchResultsPageId= Search Results Page id:;text;8 &headlinetag= Headline Tag:;list;h1,h2,h3;h1 &altheadlinetag= Alternate Headline Tag:;list;h1,h2,h3;h3 &KeywordsContainerclass= Keywords container class:;string;taglinks &RatingContainerclass= Rating container class:;string;score &ratingValueclass= Rating value class:;string;outnbsClass &ratingVotesClass= Rating votes class:;string;votesClass &itempropImage= Enable itemprop image:;list;enable,disable;enable
+&CreativeWork= Default itemscope itemtype:;string;WebPage &ContactPageId= Contact page id:;text;6 &SearchResultsPageId= Search Results Page id:;text;8 &itempropImage= Itemprop on all content images:;list;enable,disable;enable &itempropImagePhpThumb= Itemprop on phpthumb images:;list;enable,disable;enable &headlinetag= Headline Tag:;list;h1,h2,h3;h1 &altheadlinetag= Alternate Headline Tag:;list;h2,h3,h4,h5;h3 &KeywordsContainerclass= Keywords container class:;string;taglinks &RatingContainerclass= Rating container class:;string;score &ratingValueclass= Rating value class:;string;outnbsClass &ratingVotesClass= Rating votes class:;string;votesClass
 
 
  */
+
 $tvSchema = "SchemaItemScope";  // Set the name of the Template Variable
 //$documentIdentifier = ($modx->documentIdentifier);
 
@@ -91,17 +92,24 @@ else
 }
 	$modx->documentOutput= str_replace('<'.$headlinetag.'', '<'.$headlinetag.' itemprop="headline"', $modx->documentOutput); //headline
 	$modx->documentOutput= str_replace('<'.$altheadlinetag.'', '<'.$altheadlinetag.' itemprop="alternativeHeadline"', $modx->documentOutput);  //alternativee headline
-
-	//check configuratio for image itremprop////////
-	if ($itempropImage == enable) {
-	$modx->documentOutput= str_replace('<img', '<img itemprop="image"', $modx->documentOutput); // image
-}
 	$modx->documentOutput= str_replace('class="'.$KeywordsContainerclass.'"', 'class="'.$KeywordsContainerclass.'" itemprop="keywords"', $modx->documentOutput); //keywords default value "taglinks"  (from tagLinks snippet class)
 	$modx->documentOutput= str_replace('class="'.$RatingContainerclass.'"', 'class="'.$RatingContainerclass.'" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating"', $modx->documentOutput); //rating container - default value "score" (from anythingRating snippet class)
 	$modx->documentOutput= str_replace('class="'.$ratingValueclass.'"', 'class="'.$ratingValueclass.'" itemprop="ratingValue"', $modx->documentOutput); //rating votes - default value "outnbsClass"  (from anythingRating snippet class)
 	$modx->documentOutput= str_replace('class="'.$ratingVotesClass.'"', 'class="'.$ratingVotesClass.'" itemprop="reviewCount"', $modx->documentOutput); //rating counts - default value "votesClass" (from anythingRating snippet class)
+
+if ($itempropImage == enable) {
+//check configuration for phpthumb image itremprop////////
+$modx->documentOutput= str_replace('src="assets/cache/images/', 'itemprop="image" src="assets/cache/images/', $modx->documentOutput);
+} // phpthumb image
+
     break;
 
+case "OnLoadWebDocument":
+	if ($itempropImage == enable) {
+	//check configuration for image itremprop////////
+	 	$modx->documentObject['content'] = str_replace('<img', '<img itemprop="image"',$modx->documentObject['content']);
+		}
+		break;
    default :
        return; // stop.
 }
