@@ -7,7 +7,7 @@ This plugin search for html tags and default modx snippets output and automatica
 
 Supported Properties in RC 1.3:
 * itemscope and itemtype: Default (WebPage), Contactpage, SearchResultsPage or Tv value 
-* mainContentOfPage
+* mainContentOfPage / articleBody
 * headline
 * alternativeHeadline
 * image
@@ -70,9 +70,14 @@ The default plugin configuration works with the Evolution demo content installat
 * **Rating value class:** Class of rating value (ie: 5/10) (default value "outnbsClass" based on AnythingRating snippet output)
 * **Rating votes class:** Class of rating votes (ie: 42 votes) (default value "votesClass" based on AnythingRating snippet output)
 
-**SchemaItemScope tv**
+## SchemaItemScope tv
 
 ![Schema tv](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/itemscopetv.jpg)
+
+* change the **itemscope** for a single page
+* switch **articleBody** to **mainContentOfPage** when selected itemscope is **Blog** or **Article**
+
+
 
 ### Instructions:
 
