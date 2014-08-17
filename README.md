@@ -50,13 +50,11 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 
 ```
 
+## Configuration parameters:
 
-**SchemaWebPage plugin**
+The default plugin configuration works with the Evolution demo content installation and most used modx snippets, but it can be customized according to the need.
 
 ![SchemaWebPage](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/schemawebpage-plugin-conf-rc13.jpg)
-
-## Configuration parameters:
-The default plugin configuration works with the Evolution demo content installation and most used modx snippets, but it can be customized according to the need.
 
 * **Default itemscope itemtype:** default itemscope type applied to body tag of all images (can be overwritten by page tv value) 
 * **Contact page id:** id of contact page. http://schema.org/ContactPage
