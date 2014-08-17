@@ -1,7 +1,9 @@
 SchemaWebPage plugin
 ====================
 
-Add basic schema.org microdata for "WebPage", "Article" or "Blog" schemas in your MODX Evolution your template
+Add schema.org microdata for "WebPage", "Article" or "Blog" to your MODX Evolution website without change the html code of your template and your snippets tpls.
+
+This plugin search for html tags and default modx snippets output and automatically adds schema.org microdatata.
 
 Supported Properties in RC 1.3:
 * itemscope and itemtype: Default (WebPage), Contactpage, SearchResultsPage or Tv value 
@@ -49,16 +51,28 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 ```
 
 
-### Screenshots:
-
 **SchemaWebPage plugin**
 
 ![SchemaWebPage](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/schemawebpage-plugin-conf-rc13.jpg)
 
+## Configuration parameters:
+The default plugin configuration works with the Evolution demo content installation and most used modx snippets, but it can be customized according to the need.
+
+* **Default itemscope itemtype:** default itemscope type applied to body tag of all images (can be overwritten by page tv value) 
+* **Contact page id:** id of contact page. http://schema.org/ContactPage
+* **Search Results Page id:** id of Search result page. http://schema.org/SearchResultsPage
+* **Itemprop on content images:** Enable itemprop="image" for all images in the content field
+* **Itemprop on phpthumb images:** Enable itemprop="image" for all phpthumb snippet images (stored in assets/cache/images/)
+* **Headline Tag:** Select the Title tag for itemprop="headline"
+* **Alternate Headline Tag:** Select the Title tag for  itemprop="alternativeHeadline" 
+* **Keywords container class:** Class of the keywords container (default value "tagLinks" based on taglink snippet output)
+* **Rating container class:** Class of the external container of rating snippet (default value "score" based on AnythingRating snippet output)
+* **Rating value class:** Class of rating value (ie: 5/10) (default value "outnbsClass" based on AnythingRating snippet output)
+* **Rating votes class:** Class of rating votes (ie: 42 votes) (default value "votesClass" based on AnythingRating snippet output)
+
 **SchemaItemScope tv**
 
 ![Schema tv](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/itemscopetv.jpg)
-
 
 ### Instructions:
 
