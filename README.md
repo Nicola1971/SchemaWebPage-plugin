@@ -68,12 +68,14 @@ The default plugin configuration works with the Evolution demo content installat
 * **Rating value class:** Class of rating value (ie: 5/10) (default value "outnbsClass" based on AnythingRating snippet output)
 * **Rating votes class:** Class of rating votes (ie: 42 votes) (default value "votesClass" based on AnythingRating snippet output)
 
-## SchemaItemScope tv
+## SchemaItemScope tv:
 
 ![Schema tv](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/itemscopetv.jpg)
 
+####SchemaItemScope tv Features
+
 * change the **itemscope** for a single page
-* switch **articleBody** to **mainContentOfPage** when selected itemscope is **Blog** or **Article**
+* allow switch **articleBody** to **mainContentOfPage** when selected itemscope is **Blog** or **Article**
 
 
 
