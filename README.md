@@ -3,7 +3,7 @@ SchemaWebPage plugin
 
 Add basic schema.org microdata for "WebPage", "Article" or "Blog" schemas in your MODX Evolution your template
 
-Supported Properties in RC 1.2:
+Supported Properties in RC 1.3:
 * itemscope and itemtype: Default (WebPage), Contactpage, SearchResultsPage or Tv value 
 * mainContentOfPage
 * headline
@@ -53,7 +53,7 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 
 **SchemaWebPage plugin**
 
-![SchemaWebPage](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/schemawebpage-plugin-conf-rc12.jpg)
+![SchemaWebPage](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/schemawebpage-plugin-conf-rc13.jpg)
 
 **SchemaItemScope tv**
 
@@ -70,13 +70,17 @@ Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh 
 * create a new plugin named **SchemaWebPage**
 * copy and paste the plugin code from **schemaWebPage.tpl**
 
-* **System Events:** OnWebPagePrerender OnParseDocument
+* **System Events:** OnWebPagePrerender OnParseDocument OnLoadWebDocument
 
 * **Plugin configuration:** 
  
 ```&CreativeWork= Default itemscope itemtype:;string;WebPage &ContactPageId= Contact page id:;text;6 &SearchResultsPageId= Search Results Page id:;text;8 &headlinetag= Headline Tag:;list;h1,h2,h3;h1 &altheadlinetag= Alternate Headline Tag:;list;h1,h2,h3;h3 &KeywordsContainerclass= Keywords container class:;string;taglinks &RatingContainerclass= Rating container class:;string;score &ratingValueclass= Rating value class:;string;outnbsClass &ratingVotesClass= Rating votes class:;string;votesClass &itempropImage= Enable itemprop image:;list;enable,disable;enable ```
 
 # Updates
+
+### RC 1.3
+* itemprop image only on content images with OnLoadWebDocument
+* support for phpthumb images (can be disabled in the plugin configuration tab)
 
 ### RC 1.2
 * **SchemaItemScope** tv - Override default page itemscope and itemtype
