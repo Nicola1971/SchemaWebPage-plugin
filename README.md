@@ -56,7 +56,7 @@ The default plugin configuration works with the Evolution demo content installat
 
 ![SchemaWebPage](https://raw.githubusercontent.com/Nicola1971/SchemaWebPage-plugin/master/schemawebpage-plugin-conf-rc13.jpg)
 
-* **Default itemscope itemtype:** default itemscope type applied to body tag of all images (can be overwritten by page tv value) 
+* **Default itemscope itemtype:** default itemscope type applied to body tag of all pages (can be overwritten by page tv value) 
 * **Contact page id:** id of contact page. http://schema.org/ContactPage
 * **Search Results Page id:** id of Search result page. http://schema.org/SearchResultsPage
 * **Itemprop on content images:** Enable itemprop="image" for all images in the content field
